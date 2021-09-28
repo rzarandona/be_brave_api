@@ -37,9 +37,9 @@ $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc1'>".$s_p
 file_put_contents($html_file_path, $contents);
 
 // Convert the html page to PDF
-$browserFactory = new BrowserFactory();
+$browserFactory = new BrowserFactory($google_exec);
 // starts headless chrome
-$browser = $browserFactory->createBrowser($google_exec);
+$browser = $browserFactory->createBrowser();
 
 try {
     // creates a new page and navigate to an url
