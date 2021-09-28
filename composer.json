@@ -1,10 +1,13 @@
 {
-    "name": "wat/be_brave_api",
-    "authors": [
-        {
-            "name": "rzarandona",
-            "email": "rein.zarandona@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "wat/be_brave_api",
+  "authors": [
+    {
+      "name": "rzarandona",
+      "email": "rein.zarandona@gmail.com"
+    }
+  ],
+  "require": {
+    "ramsey/uuid": "^4.2",
+    "chrome-php/chrome": "^1.0"
+  }
 }
