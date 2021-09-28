@@ -2,6 +2,9 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+
 require 'vendor/autoload.php';
 use Ramsey\Uuid\Uuid;
 use HeadlessChromium\BrowserFactory;
@@ -35,6 +38,7 @@ $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc1'>".$s_p
 
 // Save the customized book
 file_put_contents($html_file_path, $contents);
+chmod($html_file_path, 0777);
 
 // Convert the html page to PDF
 $browserFactory = new BrowserFactory($google_exec);
