@@ -39,7 +39,7 @@ file_put_contents($html_file_path, $contents);
 // Convert the html page to PDF
 $browserFactory = new BrowserFactory();
 // starts headless chrome
-$browser = $browserFactory->createBrowser();
+$browser = $browserFactory->createBrowser($google_exec);
 
 try {
     // creates a new page and navigate to an url
