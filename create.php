@@ -39,8 +39,6 @@ $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc1'>".$s_p
 // Save the customized book
 file_put_contents($html_file_path, $contents);
 chmod($html_file_path, 0777);
-chown($html_file_path, 'root');
-chgrp($html_file_path, 'root');
 
 // Convert the html page to PDF
 $browserFactory = new BrowserFactory($google_exec);
