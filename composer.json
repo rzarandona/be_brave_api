@@ -1,0 +1,10 @@
+{
+    "name": "wat/be_brave_api",
+    "authors": [
+        {
+            "name": "rzarandona",
+            "email": "rein.zarandona@gmail.com"
+        }
+    ],
+    "require": {}
+}
