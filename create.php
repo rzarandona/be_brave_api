@@ -73,7 +73,7 @@ $img_data = [
     'height' => 20,
     'width' => 10.5,  
     'unit' => 'in',
-    'landscape' => true,
+    'landscape' => false,
     'test' => true
 ];
 $ch2 = curl_init();
