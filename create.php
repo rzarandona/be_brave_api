@@ -84,14 +84,11 @@ curl_setopt($ch2, CURLOPT_POSTFIELDS, json_encode($img_data));
 $response2 = curl_exec($ch2);
 curl_close($ch2);
 
-$img_converted_url = json_decode($response2);
+$img_converted_url = json_decode($response2)->document;
 
 
 
-
-var_dump($pdf_converted_url);
-echo "<hr>";
-var_dump($img_converted_url);
+echo $img_converted_url;
 
 
 
