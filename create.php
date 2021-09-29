@@ -53,7 +53,6 @@ $data = [
     'height' => 8,  
     'unit' => 'in',
     'landscape' => true,
-    'test' => true
 ];
 
 $ch = curl_init();
