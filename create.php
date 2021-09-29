@@ -49,7 +49,7 @@ $data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 20,
-    'width' => 11,  
+    'width' => 10,  
     'unit' => 'in',
     'landscape' => true,
     'test' => true
@@ -66,7 +66,7 @@ $response = curl_exec($ch);
 
 curl_close($ch);
 
-var_dump(json_decode($response), true);
+var_dump(json_decode($response)->document, true);
 
 
 
