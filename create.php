@@ -88,7 +88,7 @@ $img_converted_url = json_decode($response2)->document;
 
 
 
-echo $img_converted_url;
+echo json_encode(["image" => $img_converted_url, "pdf" => $pdf_converted_url]);
 
 
 
