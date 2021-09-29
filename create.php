@@ -38,37 +38,73 @@ $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc1'>".$s_p
 
 // Save the customized book
 file_put_contents($html_file_path, $contents);
-chmod($html_file_path, 0777);
 
-// Convert the html page to PDF
-$browserFactory = new BrowserFactory($google_exec);
-// starts headless chrome
-$browser = $browserFactory->createBrowser();
 
-try {
-    // creates a new page and navigate to an url
-    $page = $browser->createPage();
-    $page->navigate($base_api_url .'/html-converted/'.$uuid_file_string .".html")->waitForNavigation();
-    // pdf
-    $page->pdf(
-        [
-            'printBackground'     => false,
-            'landscape'           => false,     
-            'marginTop'           => 0.0,
-            'marginBottom'        => 0.0,
-            'marginLeft'          => 0.0,
-            'marginRight'         => 0.0,
-            'paperWidth'          => 16.0,
-            'paperHeight'         => 8.5,  
-        ]
-    )->saveToFile($pdf_file_path);
+$headers = [
+    'Authorization: Bearer oV5IiPlnhNwG6H7i6DN7CgzwcVqTd2nH37nGcDke',
+    'Content-Type: application/json'
+];
+
+$data = [
+    'source' => $base_api_url .'/html-converted/'.$uuid_file_string .".html",
+    'format' => 'A4',
+    'media' => 'print'
+];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://docamatic.com/api/v1/pdf');
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+$response = curl_exec($ch);
+
+curl_close($ch);
+
+var_dump(json_decode($response), true);
+
+
+
+
+
+
+
+
+
+
+
+// chmod($html_file_path, 0777);
+
+// // Convert the html page to PDF
+// $browserFactory = new BrowserFactory($google_exec);
+// // starts headless chrome
+// $browser = $browserFactory->createBrowser();
+
+// try {
+//     // creates a new page and navigate to an url
+//     $page = $browser->createPage();
+//     $page->navigate($base_api_url .'/html-converted/'.$uuid_file_string .".html")->waitForNavigation();
+//     // pdf
+//     $page->pdf(
+//         [
+//             'printBackground'     => false,
+//             'landscape'           => false,     
+//             'marginTop'           => 0.0,
+//             'marginBottom'        => 0.0,
+//             'marginLeft'          => 0.0,
+//             'marginRight'         => 0.0,
+//             'paperWidth'          => 16.0,
+//             'paperHeight'         => 8.5,  
+//         ]
+//     )->saveToFile($pdf_file_path);
         
-} finally {
-    // bye
-    $browser->close();
-}
+// } finally {
+//     // bye
+//     $browser->close();
+// }
 
-echo $base_api_url . $pdf_file_path;
+// echo $base_api_url . $pdf_file_path;
 
 
 
