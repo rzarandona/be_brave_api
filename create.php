@@ -45,7 +45,9 @@ $headers = [
     'Content-Type: application/json'
 ];
 
-$data = [
+
+
+$pdf_data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 20,
@@ -60,18 +62,37 @@ curl_setopt($ch, CURLOPT_URL, 'https://docamatic.com/api/v1/pdf');
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($pdf_data));
 $response = curl_exec($ch);
-
 curl_close($ch);
-
-echo json_decode($response)->document;
-
+$pdf_converted_url = json_decode($response)->document;
 
 
+$img_data = [
+    'source' => $pdf_converted_url,
+    'height' => 20,
+    'width' => 10.5,  
+    'unit' => 'in',
+    'landscape' => true,
+    'test' => true
+];
+$ch2 = curl_init();
+curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
+curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch2, CURLOPT_POST, 1);
+curl_setopt($ch2, CURLOPT_POSTFIELDS, json_encode($img_data));
+$response2 = curl_exec($ch2);
+curl_close($ch2);
+
+$img_converted_url = json_decode($response);
 
 
+
+
+var_dump($pdf_converted_url);
+echo "<hr>";
+var_dump($img_converted_url);
 
 
 
