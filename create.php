@@ -48,7 +48,12 @@ $headers = [
 $data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
     'format' => 'A4',
-    'media' => 'print'
+    'media' => 'print',
+    'width' => 16.0,
+    'height' => 8.5,  
+    'unit' => 'in',
+    'landscape' => true,
+    'test' => true
 ];
 
 $ch = curl_init();
