@@ -7,8 +7,6 @@ error_reporting(E_ALL);
 
 require 'vendor/autoload.php';
 use Ramsey\Uuid\Uuid;
-use HeadlessChromium\BrowserFactory;
-use HeadlessChromium\Clip; 
 
 $character = $_GET['character'] ?? "boy-a";
 $gender =  $_GET['gender'] ?? "boy";
@@ -22,7 +20,6 @@ $uuid = Uuid::uuid4();
 $uuid_file_string = $uuid->toString();
 
 $base_api_url = getenv('BASE_API_URL');
-$google_exec = getenv('GOOGLE_CHROME_EXEC');
 $html_file_path = "html-converted/".$uuid_file_string . ".html";
 $pdf_file_path = "pdf-converted/".$uuid_file_string . ".pdf";
 
