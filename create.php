@@ -94,16 +94,10 @@ $pdf_converted_url = json_decode($response)->document;
 
 $img_data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
-    // 'height' => 10.5,
-    // 'width' => 20,  
+    'height' => 21,
+    'width' => 20,  
     'unit' => 'in',
     'test' => true,
-    'clip' => [
-        "x" => 0,
-        "y" => 130,
-        "width" => 1440,
-        "height" => 400
-    ]
 ];
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
