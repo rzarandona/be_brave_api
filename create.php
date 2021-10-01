@@ -34,21 +34,21 @@ $contents = str_replace('>nc<', ">".$name."<", $contents);
 $contents = str_replace('>pa<', ">".$p_pronoun."<", $contents);
 $contents = str_replace('>sp<', ">".$s_pronoun."<", $contents);
 
-$contents = str_replace('<span class="fc1">nc</span>', "<span class='fc1'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc1">pa</span>', "<span class='fc1'>".$p_pronoun."</span>", $contents);
-$contents = str_replace('<span class="fc1">sp</span>', "<span class='fc1'>".$s_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc1">nc</span>', "<span class='fc1'>".$name."</span>", $contents);
+// $contents = str_replace('<span class="fc1">pa</span>', "<span class='fc1'>".$p_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc1">sp</span>', "<span class='fc1'>".$s_pronoun."</span>", $contents);
 
-$contents = str_replace('<span class="fc2">nc</span>', "<span class='fc2'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc2">pa</span>', "<span class='fc2'>".$p_pronoun."</span>", $contents);
-$contents = str_replace('<span class="fc2">sp</span>', "<span class='fc2'>".$s_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc2">nc</span>', "<span class='fc2'>".$name."</span>", $contents);
+// $contents = str_replace('<span class="fc2">pa</span>', "<span class='fc2'>".$p_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc2'>".$s_pronoun."</span>", $contents);
 
-$contents = str_replace('<span class="fc3">nc</span>', "<span class='fc3'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc3">pa</span>', "<span class='fc3'>".$p_pronoun."</span>", $contents);
-$contents = str_replace('<span class="fc3">sp</span>', "<span class='fc3'>".$s_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc3">nc</span>', "<span class='fc3'>".$name."</span>", $contents);
+// $contents = str_replace('<span class="fc3">pa</span>', "<span class='fc3'>".$p_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc3">sp</span>', "<span class='fc3'>".$s_pronoun."</span>", $contents);
 
-$contents = str_replace('<span class="fc4">nc</span>', "<span class='fc4'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc4">pa</span>', "<span class='fc4'>".$p_pronoun."</span>", $contents);
-$contents = str_replace('<span class="fc4">sp</span>', "<span class='fc4'>".$s_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc4">nc</span>', "<span class='fc4'>".$name."</span>", $contents);
+// $contents = str_replace('<span class="fc4">pa</span>', "<span class='fc4'>".$p_pronoun."</span>", $contents);
+// $contents = str_replace('<span class="fc4">sp</span>', "<span class='fc4'>".$s_pronoun."</span>", $contents);
 
 
 
