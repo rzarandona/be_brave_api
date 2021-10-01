@@ -98,6 +98,12 @@ $img_data = [
     'width' => 20,  
     'unit' => 'in',
     'test' => true,
+    'clip' => [
+        "x" => 0,
+        "y" => 130,
+        "width" => 1440,
+        "height" => 400
+    ]
 ];
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
