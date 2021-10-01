@@ -94,7 +94,7 @@ $pdf_converted_url = json_decode($response)->document;
 
 $img_data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
-    'height' => 21,
+    'height' => 25,
     'width' => 20,  
     'unit' => 'in',
     'test' => true,
