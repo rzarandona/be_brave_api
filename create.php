@@ -29,9 +29,10 @@ $contents = file_get_contents ("be_brave.html");
 
 // Perform replacement of custom data
 $contents = str_replace('<span class="fc2">nc)</span>', "<span class='fc2'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc0 sc0">nc</span>', "<span class='fc0 sc0'>".$name."</span>", $contents);
-$contents = str_replace('<span class="fc0 sc0">pa</span>', "<span class='fc0 sc0'>".$p_pronoun."</span>", $contents);
-$contents = str_replace('<span class="fc0 sc0">sp</span>', "<span class='fc0 sc0'>".$s_pronoun."</span>", $contents);
+
+$contents = str_replace('>nc<', ">".$name."<", $contents);
+$contents = str_replace('>pa<', ">".$p_pronoun."<", $contents);
+$contents = str_replace('>sp<', ">".$s_pronoun."<", $contents);
 
 $contents = str_replace('<span class="fc1">nc</span>', "<span class='fc1'>".$name."</span>", $contents);
 $contents = str_replace('<span class="fc1">pa</span>', "<span class='fc1'>".$p_pronoun."</span>", $contents);
