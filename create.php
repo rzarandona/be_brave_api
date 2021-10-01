@@ -77,6 +77,7 @@ $pdf_data = [
     'width' => 10.5,  
     'unit' => 'in',
     'landscape' => true,
+    'page_ranges'=> '2-18',
     'test' => true
 ];
 
@@ -97,10 +98,6 @@ $img_data = [
     'width' => 20,  
     'unit' => 'in',
     'test' => true,
-    'clip' => [
-        'x' => 0,
-        'y' => 200
-    ]
 ];
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
