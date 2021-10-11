@@ -71,7 +71,7 @@ $pdf_data = [
     'height' => 10.1,
     'width' => 10,  
     'unit' => 'in',
-    'page_ranges'=> '2-18',
+    'page_ranges'=> '2-30',
     'test' => true
 ];
 
