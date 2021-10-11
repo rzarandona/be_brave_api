@@ -29,12 +29,12 @@ $contents = file_get_contents ("be_brave.html");
 
 // Perform replacement of custom data
 
-$contents = str_replace('>nc<', ">".$name."<", $contents);
-$contents = str_replace('>pa<', ">".$p_pronoun."<", $contents);
-$contents = str_replace('>sp<', ">".$s_pronoun."<", $contents);
+$contents = str_replace('(nc)', $name, $contents);
+$contents = str_replace('(pa)', $p_pronoun, $contents);
+$contents = str_replace('(sp)', $s_pronoun, $contents);
 
-$contents = str_replace('>spc<', ">".ucfirst($s_pronoun)."<", $contents);
-$contents = str_replace('>boy or girl<', ">". $gender ."<", $contents);
+$contents = str_replace('(spc)', ucfirst($s_pronoun), $contents);
+$contents = str_replace('(boy or girl)', "". $gender , $contents);
 
 
 // $contents = str_replace('<span class="fc1">nc</span>', "<span class='fc1'>".$name."</span>", $contents);
