@@ -21,14 +21,11 @@ $uuid_file_string = $uuid->toString();
 
 $base_api_url = getenv('BASE_API_URL');
 $html_file_path = "html-converted/".$uuid_file_string . ".html";
-$pdf_file_path = "pdf-converted/".$uuid_file_string . ".pdf";
+$html_outer_file_path = "html-outer-converted/".$uuid_file_string . ".html";
 
 
-// Prepares the html-converted template be_brave book
+// Parse Inner Book File
 $contents = file_get_contents ("be_brave.html");
-
-// Perform replacement of custom data
-
 $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pa)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
@@ -37,27 +34,14 @@ $contents = str_replace('(pronoun)', $s_pronoun, $contents);
 
 $contents = str_replace('(spc)', ucfirst($s_pronoun), $contents);
 $contents = str_replace('(boy or girl)', "". $gender , $contents);
-
-
-// $contents = str_replace('<span class="fc1">nc</span>', "<span class='fc1'>".$name."</span>", $contents);
-// $contents = str_replace('<span class="fc1">pa</span>', "<span class='fc1'>".$p_pronoun."</span>", $contents);
-// $contents = str_replace('<span class="fc1">sp</span>', "<span class='fc1'>".$s_pronoun."</span>", $contents);
-
-// $contents = str_replace('<span class="fc2">nc</span>', "<span class='fc2'>".$name."</span>", $contents);
-// $contents = str_replace('<span class="fc2">pa</span>', "<span class='fc2'>".$p_pronoun."</span>", $contents);
-// $contents = str_replace('<span class="fc2">sp</span>', "<span class='fc2'>".$s_pronoun."</span>", $contents);
-
-// $contents = str_replace('<span class="fc3">nc</span>', "<span class='fc3'>".$name."</span>", $contents);
-// $contents = str_replace('<span class="fc3">pa</span>', "<span class='fc3'>".$p_pronoun."</span>", $contents);
-// $contents = str_replace('<span class="fc3">sp</span>', "<span class='fc3'>".$s_pronoun."</span>", $contents);
-
-// $contents = str_replace('<span class="fc4">nc</span>', "<span class='fc4'>".$name."</span>", $contents);
-// $contents = str_replace('<span class="fc4">pa</span>', "<span class='fc4'>".$p_pronoun."</span>", $contents);
-// $contents = str_replace('<span class="fc4">sp</span>', "<span class='fc4'>".$s_pronoun."</span>", $contents);
-
-
-// Save the customized book
 file_put_contents($html_file_path, $contents);
+
+// Parse Outer Book File
+$contents = file_get_contents ("be_brave_outer.html");
+$contents = str_replace('(nc)', $name, $contents);
+$contents = str_replace('(pa)', $p_pronoun, $contents);
+$contents = str_replace('(sp)', $s_pronoun, $contents);
+file_put_contents($html_outer_file_path, $contents);
 
 
 $headers = [
@@ -66,14 +50,14 @@ $headers = [
 ];
 
 
-
+// START INNER CONVERSIONS
 $pdf_data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 10.1,
     'width' => 10,  
     'unit' => 'in',
-    'page_ranges'=> '2-30',
+    'page_ranges'=> '2-29',
     'test' => true
 ];
 
@@ -87,9 +71,31 @@ $response = curl_exec($ch);
 curl_close($ch);
 $pdf_converted_url = json_decode($response)->document;
 
+//START OUTER CONVERSIONS
+$outer_pdf_data = [
+    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-outer-converted//' . $uuid_file_string . ".html",
+    'media' => 'print',
+    'height' => 20,
+    'width' => 10.5,
+    'landscape' => true,  
+    'unit' => 'in',
+    'test' => true
+];
 
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://docamatic.com/api/v1/pdf');
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($outer_pdf_data));
+$response = curl_exec($ch);
+curl_close($ch);
+$outer_pdf_converted_url = json_decode($response)->document;
+
+
+// START IMAGE CONVERSIONS
 $img_data = [
-    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
+    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-outer-converted/' . $uuid_file_string . ".html",
     'height' => 20.85,
     'width' => 20,  
     'unit' => 'in',
@@ -108,44 +114,9 @@ $img_converted_url = json_decode($response2)->document;
 
 
 
-echo json_encode(["image" => $img_converted_url, "pdf" => $pdf_converted_url]);
+echo json_encode(["image" => $img_converted_url, "inner_pdf" => $pdf_converted_url, "outer_pdf" => $outer_pdf_converted_url]);
 
 
-
-
-
-
-// chmod($html_file_path, 0777);
-
-// // Convert the html page to PDF
-// $browserFactory = new BrowserFactory($google_exec);
-// // starts headless chrome
-// $browser = $browserFactory->createBrowser();
-
-// try {
-//     // creates a new page and navigate to an url
-//     $page = $browser->createPage();
-//     $page->navigate($base_api_url .'/html-converted/'.$uuid_file_string .".html")->waitForNavigation();
-//     // pdf
-//     $page->pdf(
-//         [
-//             'printBackground'     => false,
-//             'landscape'           => false,     
-//             'marginTop'           => 0.0,
-//             'marginBottom'        => 0.0,
-//             'marginLeft'          => 0.0,
-//             'marginRight'         => 0.0,
-//             'paperWidth'          => 16.0,
-//             'paperHeight'         => 8.5,  
-//         ]
-//     )->saveToFile($pdf_file_path);
-        
-// } finally {
-//     // bye
-//     $browser->close();
-// }
-
-// echo $base_api_url . $pdf_file_path;
 
 
 
