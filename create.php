@@ -114,7 +114,7 @@ $img_converted_url = json_decode($response2)->document;
 
 
 
-echo json_encode(["image" => $img_converted_url, "inner_pdf" => $pdf_converted_url, "outer_pdf" => $outer_pdf_converted_url, "source_id" => $source_id]);
+echo json_encode(["image" => $img_converted_url, "inner_pdf" => $pdf_converted_url, "outer_pdf" => $outer_pdf_converted_url, "source_id" => $uuid_file_string]);
 
 
 
