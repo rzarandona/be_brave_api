@@ -33,6 +33,8 @@ $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pa)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
 
+$contents = str_replace('(pronoun)', $s_pronoun, $contents);
+
 $contents = str_replace('(spc)', ucfirst($s_pronoun), $contents);
 $contents = str_replace('(boy or girl)', "". $gender , $contents);
 
