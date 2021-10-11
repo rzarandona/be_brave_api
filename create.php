@@ -68,10 +68,9 @@ $headers = [
 $pdf_data = [
     'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 20,
-    'width' => 10.5,  
+    'height' => 11,
+    'width' => 10,  
     'unit' => 'in',
-    'landscape' => true,
     'page_ranges'=> '2-18',
     'test' => true
 ];
