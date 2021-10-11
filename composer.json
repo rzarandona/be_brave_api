@@ -7,7 +7,6 @@
     }
   ],
   "require": {
-    "ramsey/uuid": "^4.2",
-    "chrome-php/chrome": "^1.0"
+    "ramsey/uuid": "^4.2"
   }
 }
