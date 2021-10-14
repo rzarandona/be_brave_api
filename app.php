@@ -26,7 +26,7 @@
     </nav>
     <div class="container">
       
-      <table class="table table-hove table-striped table-responsive mt-4 mb-4" >
+      <table class="table table-hover table-striped table-responsive mt-4 mb-4" >
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -44,13 +44,7 @@
               <td><?php echo $submission['email']; ?></td>
               <td><?php echo $submission['date_created']; ?></td>
               <td><?php echo $submission['date_paid']; ?></td>
-              <td>
-                <button
-                  class="btn btn-sm btn-primary"
-                  data-inner-pdf-link="<?php $submission['inner_pdf_link']; ?>"
-                  data-outer-pdf-link="<?php $submission['outer_pdf_link']; ?>"
-                >Print</button>
-              </td>
+              <td><button class="btn btn-sm btn-primary">Print</button></td>
             </tr>
           <?php } ?>
         </tbody>
