@@ -26,7 +26,7 @@
     </nav>
     <div class="container">
       
-      <table class="table table-striped">
+      <table class="table table-striped my-4">
         <thead>
           <tr>
             <th scope="col">ID</th>
