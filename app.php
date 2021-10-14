@@ -26,7 +26,7 @@
     </nav>
     <div class="container">
       
-      <table class="table table-striped table-responsive mt-4 mb-4" >
+      <table class="table table-hover table-striped table-responsive mt-4 mb-4" >
         <thead>
           <tr>
             <th scope="col">ID</th>
