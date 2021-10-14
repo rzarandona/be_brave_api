@@ -19,6 +19,9 @@ $outer_pdf_link = $_POST['outer_pdf_url'];
 $inner_pdf_link = $_POST['inner_pdf_url'];
 $preview_image_link = $_POST['preview_url'];
 
+date_default_timezone_set('Europe/London');
+$date_now = date("m-d-Y H:i");
+
 $sql = "
 INSERT INTO 
   book_submissions 
