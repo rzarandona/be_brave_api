@@ -29,7 +29,6 @@ INSERT INTO
     (email, preview_image_link, outer_pdf_link, inner_pdf_link, date_created, date_paid, is_paid)
   VALUES
     ('{$email}', '{$preview_image_link}', '{$outer_pdf_link}', '{$inner_pdf_link}', '{$date_now}', NULL, 'false');
-  SELECT LAST_INSERT_ID();
 ";
 
 if ($conn->query($sql) == TRUE) {
