@@ -16,4 +16,15 @@ if ($conn->connect_error) {
 
 
 $email = $_POST['email'];
-echo json_encode($email);
+$outer_pdf_link = $_POST['outer_pdf_url'];
+$inner_pdf_link = $_POST['inner_pdf_url'];
+$preview_image_link = $_POST['preview_url'];
+
+$data = [
+  $email,
+  $outer_pdf_link,
+  $inner_pdf_link,
+  $preview_image_link
+];
+
+echo json_encode($data);
