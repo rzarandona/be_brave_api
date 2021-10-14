@@ -12,6 +12,6 @@ $result = $conn->query($sql);
 
 $book_submissions = [];
 
-while($row =  $result->fetch_array(MYSQLI_NUM)){
+while($row =  $result->fetch_array(MYSQLI_ASSOC)){
   array_push($book_submissions, $row);
 }

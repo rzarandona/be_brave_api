@@ -24,7 +24,28 @@
       </div>
     </nav>
     <div class="container">
-      <?php print_r($book_submissions)?>
+      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($book_submissions as $submission) {?>
+            <?php print_r($submission);?>
+           <!-- <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+          <?php } ?>
+        </tbody>
+      </table>
+
     </div>
 </body>
 </html>
