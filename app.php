@@ -28,20 +28,21 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Date Paid</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach($book_submissions as $submission){?>
-            <tr>
-              <th scope="row">3</th>
+            <?php print_r($submission); ?>
+            <!-- <tr>
+              <th scope="row"></th>
               <td>Larry</td>
               <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            </tr> -->
           <?php } ?>
         </tbody>
       </table>
