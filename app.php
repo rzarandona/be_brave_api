@@ -39,7 +39,6 @@
           <?php foreach($book_submissions as $submission){?>
 
             <tr>
-              <th scope="row"></th>
               <td><?php echo $submission['id']; ?></td>
               <td></td>
               <td></td>
