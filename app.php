@@ -40,10 +40,10 @@
 
             <tr>
               <td><?php echo $submission['id']; ?></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><?php echo $submission['email']; ?></td>
+              <td><?php echo $submission['date_created']; ?></td>
+              <td><?php echo $submission['date_paid']; ?></td>
+              <td><button class="btn-primary">OneFlow</button></td>
             </tr>
           <?php } ?>
         </tbody>
