@@ -2,11 +2,6 @@
 
 require "header.php";
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 $email = $_POST['email'];
 $outer_pdf_link = $_POST['outer_pdf_url'];
 $inner_pdf_link = $_POST['inner_pdf_url'];

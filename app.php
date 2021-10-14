@@ -1,5 +1,8 @@
 <?php
+  require "header.php";
 
-  echo "SLIDEn";
-
+  $sql = "SELECT * FROM book_submissions";
+  if ($data = $conn->query($sql) == TRUE) {
+    print_r($data);
+  }
 ?>
