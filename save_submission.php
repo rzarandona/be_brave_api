@@ -32,7 +32,8 @@ INSERT INTO
   SELECT LAST_INSERT_ID();
 ";
 
-if ($id = $conn->query($sql) == TRUE) {
+if ($conn->query($sql) == TRUE) {
+  $id = $conn->insert_id;
   echo $id;
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
