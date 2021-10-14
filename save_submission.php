@@ -1,5 +1,7 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+
 $servername = "localhost";
 $username = "root";
 $password = "#2021Wearetraction";
