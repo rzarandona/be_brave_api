@@ -3,9 +3,7 @@
 
   $sql = "SELECT * FROM book_submissions";
   $result = $conn->query($sql);
-  $row = $result->fetch_array(MYSQLI_NUM);
-
-  while($row){
+  while($row =  $result->fetch_array(MYSQLI_NUM)){
     var_dump($row);
   }
 
