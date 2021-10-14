@@ -25,25 +25,23 @@
     </nav>
     <div class="container">
       
-      <table class="table table-striped">
+      <table class="table">
         <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Email</th>
-            <th scope="col">Action</th>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
           </tr>
         </thead>
         <tbody>
-          <?php foreach($book_submissions as $submission) {?>
-            <!-- <?php print_r($submission);?> -->
-           <!-- <tr>
+         
+          <tr>
             <th scope="row">3</th>
             <td>Larry</td>
             <td>the Bird</td>
             <td>@twitter</td>
-          </tr> -->
-          asd
-          <?php } ?>
+          </tr>
         </tbody>
       </table>
 
