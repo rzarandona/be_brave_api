@@ -35,13 +35,14 @@
           </tr>
         </thead>
         <tbody>
-         
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <?php foreach($book_submissions as $submission){?>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          <?php } ?>
         </tbody>
       </table>
 
