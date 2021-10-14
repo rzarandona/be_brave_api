@@ -5,9 +5,10 @@ header('Access-Control-Allow-Origin: *');
 $servername = "localhost";
 $username = "root";
 $password = "#2021Wearetraction";
+$database = "book_submissions";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
