@@ -37,12 +37,15 @@
         </thead>
         <tbody>
           <?php foreach($book_submissions as $submission){?>
-            <?php print_r($submission); ?>
-            <!-- <tr>
+
+            <tr>
               <th scope="row"></th>
-              <td>Larry</td>
-              <td>the Bird</td>
-            </tr> -->
+              <td><?php echo $submission['id']; ?></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           <?php } ?>
         </tbody>
       </table>
