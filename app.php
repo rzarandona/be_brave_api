@@ -18,7 +18,11 @@
 </head>
 <body>
   <div class="container">
-    <h3>Book Submissions API Dashboard</h3>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://157.245.51.194/api/hectors_post/be_brave/app.php">Book Submissions API Dashboard</a>
+      </div>
+    </nav>
     <?php print_r($book_submissions)?>
   </div>
 </body>
