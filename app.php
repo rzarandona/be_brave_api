@@ -19,6 +19,7 @@
 <body>
   <div class="container">
     <h3>Book Submissions API Dashboard</h3>
+    <?php print_r($book_submissions)?>
   </div>
 </body>
 </html>

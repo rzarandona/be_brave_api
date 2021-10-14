@@ -9,6 +9,9 @@ require "dbconn.php";
 
 $sql = "SELECT * FROM book_submissions";
 $result = $conn->query($sql);
+
+$book_submissions = [];
+
 while($row =  $result->fetch_array(MYSQLI_NUM)){
-  var_dump($row);
+  array_push($book_submissions, $row);
 }
