@@ -47,8 +47,8 @@
               <td>
                 <button
                   class="btn btn-sm btn-primary"
-                  data-inner-pdf-link="<?php $submission['inner_pdf_link']; ?>"
-                  data-outer-pdf-link="<?php $submission['outer_pdf_link']; ?>"
+                  data-inner-pdf-link="<?php echo $submission['inner_pdf_link']; ?>"
+                  data-outer-pdf-link="<?php echo $submission['outer_pdf_link']; ?>"
                 >Print</button>
               </td>
             </tr>
