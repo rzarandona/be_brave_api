@@ -5,7 +5,9 @@
   $result = $conn->query($sql);
   $row = $result->fetch_array(MYSQLI_NUM);
 
-  var_dump($row);
+  while($row){
+    var_dump($row);
+  }
 
 
 ?>
