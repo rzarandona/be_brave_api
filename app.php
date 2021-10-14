@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Submissions API Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
               <td><?php echo $submission['email']; ?></td>
               <td><?php echo $submission['date_created']; ?></td>
               <td><?php echo $submission['date_paid']; ?></td>
-              <td><button class="btn-primary">OneFlow</button></td>
+              <td><button class="btn btn-sm btn-primary">Print</button></td>
             </tr>
           <?php } ?>
         </tbody>
