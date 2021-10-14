@@ -18,7 +18,7 @@
 </head>
 <body>
   <div class="container">
-    <h3>Book Submissions API Dashboard</h3>
+    <h1>Book Submissions API Dashboard</h1>
     <?php print_r($book_submissions)?>
   </div>
 </body>
