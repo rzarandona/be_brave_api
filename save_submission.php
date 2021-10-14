@@ -20,7 +20,7 @@ $inner_pdf_link = $_POST['inner_pdf_url'];
 $preview_image_link = $_POST['preview_url'];
 
 date_default_timezone_set('Europe/London');
-$date_now = date("m-d-Y H:i");
+$date_now = date("m-d-Y h:i A");
 
 $sql = "
 INSERT INTO 
@@ -30,7 +30,12 @@ INSERT INTO
     ('{$email}', '{$preview_image_link}', '{$outer_pdf_link}', '{$inner_pdf_link}', '{$date_now}', NULL, 'false');
 ";
 
+if ($conn->query($sql) == TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
-
+$conn->close();
 
 echo json_encode($sql);
