@@ -37,5 +37,3 @@ if ($conn->query($sql) == TRUE) {
 }
 
 $conn->close();
-
-echo json_encode($sql);
