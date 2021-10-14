@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "#2021Wearetraction";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
