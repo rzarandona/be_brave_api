@@ -2,9 +2,10 @@
   require "header.php";
 
   $sql = "SELECT * FROM book_submissions";
-  $result -> $conn->query($sql);
-  $arr = $result->fetch_all(MYSQLI_ASSOC);
+  $result = $conn->query($sql);
+  $row = $result->fetch_array(MYSQLI_NUM);
 
-  var_dump($arr);
+  var_dump($row);
+
 
 ?>
