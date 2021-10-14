@@ -1,5 +1,11 @@
 <?php
 
+/*
+  dbconn.php
+  -> Sets up the mysqli connection to the database
+*/
+
+
 header('Access-Control-Allow-Origin: *');
 
 $servername = "localhost";

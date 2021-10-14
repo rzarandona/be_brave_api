@@ -1,6 +1,12 @@
 <?php
 
-require "header.php";
+/*
+  save_submission.php
+  -> API endpoint to save a book submission to the database
+*/
+
+
+require "dbconn.php";
 
 $email = $_POST['email'];
 $outer_pdf_link = $_POST['outer_pdf_url'];
