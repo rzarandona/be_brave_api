@@ -73,8 +73,8 @@
 
   <script>
 
-      import axios from "axios";
-      import crypto from "crypto-js";
+      let axios = require("axios");
+      let crypto = require("crypto-js");
         
       function submit(){
 
