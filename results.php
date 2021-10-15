@@ -16,4 +16,4 @@ while($row =  $result->fetch_array(MYSQLI_ASSOC)){
   array_push($book_submissions, $row);
 }
 
-return json_encode($book_submissions);
+echo json_encode($book_submissions);
