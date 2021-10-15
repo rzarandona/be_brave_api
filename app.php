@@ -47,6 +47,7 @@
               <td><?php echo $submission['date_paid']; ?></td>
               <td>
                 <a
+                  target="_blank"
                   href="http://157.245.51.194/sites/hp/wp-admin/post.php?post=<?php echo $submission['order_id'];?>&action=edit">
                 <?php echo $submission['order_id']; ?>
                 </a>
