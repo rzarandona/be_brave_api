@@ -45,7 +45,12 @@
               <td><?php echo $submission['email']; ?></td>
               <td><?php echo $submission['date_created']; ?></td>
               <td><?php echo $submission['date_paid']; ?></td>
-              <td><?php echo $submission['order_id']; ?></td>
+              <td>
+                <a
+                  href="http://157.245.51.194/sites/hp/wp-admin/post.php?post=<?php echo $submission['order_id'];?>&action=edit">
+                <?php echo $submission['order_id']; ?>
+                </a>
+              </td>
               <td>
                 <button
                   class="btn btn-sm btn-primary"
