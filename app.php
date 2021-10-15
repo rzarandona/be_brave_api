@@ -33,6 +33,7 @@
             <th scope="col">Email</th>
             <th scope="col">Date Created</th>
             <th scope="col">Date Paid</th>
+            <th scope="col">Order ID</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -44,6 +45,7 @@
               <td><?php echo $submission['email']; ?></td>
               <td><?php echo $submission['date_created']; ?></td>
               <td><?php echo $submission['date_paid']; ?></td>
+              <td><?php echo $submission['order_id']; ?></td>
               <td>
                 <button
                   class="btn btn-sm btn-primary"
