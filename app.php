@@ -78,6 +78,8 @@
    
       function submit(){
 
+        console.log('asd');
+
         let data = {
           "destination": {
             "name": "pureprint"
