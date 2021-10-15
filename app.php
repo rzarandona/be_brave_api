@@ -57,7 +57,7 @@
                 class="btn btn-sm btn-primary"
                 data-inner-pdf-link="<?php echo $submission['inner_pdf_link']; ?>"
                 data-outer-pdf-link="<?php echo $submission['outer_pdf_link']; ?>"
-                onclick="submit"
+                onclick="submit()"
               >Print</button>
               <a target="_blank" href="<?php echo $submission['inner_pdf_link']; ?>" class="btn btn-sm btn-secondary">Inner PDF</a>
               <a target="_blank" href="<?php echo $submission['outer_pdf_link']; ?>" class="btn btn-sm btn-secondary">Outer PDF</a>
