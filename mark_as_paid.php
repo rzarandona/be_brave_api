@@ -3,6 +3,7 @@ require("dbconn.php");
 header('Access-Control-Allow-Origin: *');
 
 $session_id = $_POST['session_id'];
+date_default_timezone_set('Europe/London');
 $date_now = date("m-d-Y h:i A");
 
 $sql = "
