@@ -7,7 +7,7 @@
 
 require "dbconn.php";
 
-$sql = "SELECT * FROM book_submissions";
+$sql = "SELECT * FROM book_submissions ORDER BY id DESC";
 $result = $conn->query($sql);
 
 $book_submissions = [];
