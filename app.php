@@ -73,8 +73,6 @@
   
   <script src="https://cdn.jsdelivr.net/npm/leaflet-sidebar@0.2.4/src/L.Control.Sidebar.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/aes.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/cipher-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/enc-base64.min.js"></script>
