@@ -33,6 +33,8 @@ $contents = str_replace('(pronoun)', $s_pronoun, $contents);
 
 $contents = str_replace('(spc)', ucfirst($s_pronoun), $contents);
 $contents = str_replace('(boy or girl)', "". $gender , $contents);
+$contents = str_replace('“', '"', $contents);
+
 file_put_contents($html_file_path, $contents);
 
 // Parse Outer Book File
@@ -41,8 +43,6 @@ $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pp)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
 $contents = str_replace('“', '"', $contents);
-
-
 file_put_contents($html_outer_file_path, $contents);
 
 
