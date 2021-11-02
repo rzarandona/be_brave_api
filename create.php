@@ -27,7 +27,7 @@ $html_outer_file_path = "html-outer-converted/".$uuid_file_string . ".html";
 
 
 // Parse Inner Book File
-$contents = file_get_contents ("be_brave.html");
+$contents = file_get_contents ("./templates/" . $character . ".html");
 $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pp)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
@@ -39,7 +39,7 @@ $contents = str_replace('(boy or girl)', "". $gender , $contents);
 file_put_contents($html_file_path, $contents);
 
 // Parse Outer Book File
-$contents = file_get_contents ("be_brave_outer.html");
+$contents = file_get_contents ("./templates/" . $character . "-outer.html");
 $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pa)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
