@@ -40,6 +40,9 @@ $contents = file_get_contents ("./templates/" . $character . "-outer.html");
 $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pp)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
+$contents = str_replace('“', '"', $contents);
+
+
 file_put_contents($html_outer_file_path, $contents);
 
 
