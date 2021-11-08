@@ -54,7 +54,7 @@ $headers = [
 
 // START INNER CONVERSIONS
 $pdf_data = [
-    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-converted/' . $uuid_file_string . ".html",
+    'source' => 'https://bebraveapi.hectorspost.com/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 10.1,
     'width' => 10,  
@@ -71,11 +71,11 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($pdf_data));
 $response = curl_exec($ch);
 curl_close($ch);
-$pdf_converted_url = json_decode($response);
+$pdf_converted_url = json_decode($response)->data;
 
 //START OUTER CONVERSIONS
 $outer_pdf_data = [
-    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-outer-converted//' . $uuid_file_string . ".html",
+    'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 20,
     'width' => 10.5,
@@ -92,12 +92,12 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($outer_pdf_data));
 $response = curl_exec($ch);
 curl_close($ch);
-$outer_pdf_converted_url = json_decode($response);
+$outer_pdf_converted_url = json_decode($response)->data;
 
 
 // START IMAGE CONVERSIONS
 $img_data = [
-    'source' => 'http://157.245.51.194/api/hectors_post/be_brave/html-outer-converted/' . $uuid_file_string . ".html",
+    'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'height' => 20.85,
     'width' => 20,  
     'unit' => 'in',
@@ -112,7 +112,7 @@ curl_setopt($ch2, CURLOPT_POSTFIELDS, json_encode($img_data));
 $response2 = curl_exec($ch2);
 curl_close($ch2);
 
-$img_converted_url = json_decode($response2);
+$img_converted_url = json_decode($response2)->data;
 
 
 
