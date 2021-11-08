@@ -71,7 +71,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($pdf_data));
 $response = curl_exec($ch);
 curl_close($ch);
-$pdf_converted_url = json_decode($response)->document;
+$pdf_converted_url = json_decode($response);
 
 //START OUTER CONVERSIONS
 $outer_pdf_data = [
@@ -92,7 +92,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($outer_pdf_data));
 $response = curl_exec($ch);
 curl_close($ch);
-$outer_pdf_converted_url = json_decode($response)->document;
+$outer_pdf_converted_url = json_decode($response);
 
 
 // START IMAGE CONVERSIONS
@@ -112,7 +112,7 @@ curl_setopt($ch2, CURLOPT_POSTFIELDS, json_encode($img_data));
 $response2 = curl_exec($ch2);
 curl_close($ch2);
 
-$img_converted_url = json_decode($response2)->document;
+$img_converted_url = json_decode($response2);
 
 
 
