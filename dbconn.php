@@ -9,9 +9,9 @@
 header('Access-Control-Allow-Origin: *');
 
 $servername = "localhost";
-$username = "root";
+$username = "hectorspost_user";
 $password = "#2021Wearetraction";
-$database = "hectors_post";
+$database = "be_brave_api";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
