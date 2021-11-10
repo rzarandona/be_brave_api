@@ -16,9 +16,6 @@ $o_pronoun =  $_GET['o_pronoun'] ?? "him";
 $p_pronoun =  $_GET['p_pronoun'] ?? "his";
 $cover_type = $_GET['cover_type'];
 
-echo $cover_type;
-exit;
-
 $uuid = Uuid::uuid4();
 $uuid_file_string = $uuid->toString();
 
@@ -77,15 +74,21 @@ $response = curl_exec($ch);
 curl_close($ch);
 $pdf_converted_url = json_decode($response)->document;
 
+$outer_page_ranges = "1-2";
+if($cover_type == "hardback"){
+    $outer_page_ranges = "1";
+}
+
 //START OUTER CONVERSIONS
 $outer_pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
     'height' => 20,
     'width' => 10.5,
+    'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
     'unit' => 'in',
-    'test' => true
+    'test' => true,
 ];
 
 $ch = curl_init();
