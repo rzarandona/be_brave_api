@@ -14,6 +14,10 @@ $name =  $_GET['character_name'] ?? "Davids";
 $s_pronoun =  $_GET['s_pronoun'] ?? "he";
 $o_pronoun =  $_GET['o_pronoun'] ?? "him";
 $p_pronoun =  $_GET['p_pronoun'] ?? "his";
+$cover_type = $_GET['cover_type'];
+
+echo $cover_type;
+exit;
 
 $uuid = Uuid::uuid4();
 $uuid_file_string = $uuid->toString();
