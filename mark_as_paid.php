@@ -23,5 +23,7 @@ $sql = "
 ";
 
 if ($conn->query($sql) == TRUE) {
-  echo "UPDATED";
+  echo 'Records updated!';
+}else{
+  echo 'There was an error.';
 }
