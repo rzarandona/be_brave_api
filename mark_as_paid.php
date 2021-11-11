@@ -31,10 +31,8 @@ $sql = "
   WHERE id = {$session_id}
 ";
 
-echo json_encode($my_arr);
-
-// if ($conn->query($sql) == TRUE) {
-//   echo 'Records updated!';
-// }else{
-//   echo 'There was an error.';
-// }
+if ($conn->query($sql) == TRUE) {
+  echo 'Records updated!';
+}else{
+  echo 'There was an error.';
+}
