@@ -27,7 +27,7 @@ $my_arr = [
 
 $sql = "
   UPDATE book_submissions
-  SET is_paid = 'true', date_paid = '{$date_now}', order_id = '{$order_id}', address_line = '{$address_line}', customer_name = '{$customer_name}', iso_country = '{$iso_country}', postcode = '{$postcode}', shipping_alias = '{$shipping_alias}', town = '{$town}', unit_cost = '{$unit_cost}',
+  SET is_paid = 'true', date_paid = '{$date_now}', order_id = '{$order_id}', address_line = '{$address_line}', customer_name = '{$customer_name}', iso_country = '{$iso_country}', postcode = '{$postcode}', shipping_alias = '{$shipping_alias}', town = '{$town}', unit_cost = '{$unit_cost}'
   WHERE id = {$session_id}
 ";
 
