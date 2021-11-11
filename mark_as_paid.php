@@ -35,4 +35,5 @@ if ($conn->query($sql) == TRUE) {
   echo 'Records updated!';
 }else{
   echo 'There was an error.';
+  echo mysqli_error($conn);
 }
