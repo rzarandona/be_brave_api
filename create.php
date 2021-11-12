@@ -57,11 +57,11 @@ $headers = [
 $pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 210, //10.1
-    'width' => 210,  //10
-    'unit' => 'mm',
+    'height' => 10.1, //10.1
+    'width' => 10,  //10
+    'unit' => 'in',
     'page_ranges'=> '2-29',
-    //'test' => true
+    'test' => true
 ];
 
 $ch = curl_init();
@@ -83,12 +83,12 @@ if($cover_type == "hardback"){
 $outer_pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 210, // 20
-    'width' => 210, // 10.5
+    'height' => 20, // 20
+    'width' => 10.5, // 10.5
     'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
-    'unit' => 'mm', // in
-    //'test' => true,
+    'unit' => 'in', // in
+    'test' => true,
 ];
 
 $ch = curl_init();
@@ -105,10 +105,10 @@ $outer_pdf_converted_url = json_decode($response)->document;
 // START IMAGE CONVERSIONS
 $img_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
-    'height' => 210, // 20.85
-    'width' => 210,   // 20
-    'unit' => 'mm',
-    //'test' => true,
+    'height' => 20.85, // 20.85
+    'width' => 20,   // 20
+    'unit' => 'in',
+    'test' => true,
 ];
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
