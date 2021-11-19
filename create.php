@@ -74,7 +74,7 @@ $response = curl_exec($ch);
 curl_close($ch);
 $pdf_converted_url = json_decode($response)->document;
 
-$outer_page_ranges = "1-2";
+$outer_page_ranges = "1, 3";
 if($cover_type == "hardback"){
     $outer_page_ranges = "1";
 }
