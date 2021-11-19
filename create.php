@@ -57,8 +57,8 @@ $headers = [
 $pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 10.1, //10.1
-    'width' => 10,  //10
+    'height' => 9.08, //10.1
+    'width' => 9.08,  //10
     'unit' => 'in',
     'page_ranges'=> '2-29',
     'test' => true
@@ -83,8 +83,8 @@ if($cover_type == "hardback"){
 $outer_pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 20, // 20
-    'width' => 10.5, // 10.5
+    'height' => 17.51, // 20
+    'width' => 9.08, // 10.5
     'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
     'unit' => 'in', // in
@@ -105,8 +105,9 @@ $outer_pdf_converted_url = json_decode($response)->document;
 // START IMAGE CONVERSIONS
 $img_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
-    'height' => 20.85, // 20.85
-    'width' => 20,   // 20
+    'height' => 17.51, // 20
+    'width' => 9.08, // 10.5
+    'landscape' =>  true,
     'unit' => 'in',
     'test' => true,
 ];
