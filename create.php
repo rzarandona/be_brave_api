@@ -60,8 +60,8 @@ $pdf_data = [
     'height' => 9.09, //10.1
     'width' => 9.09,  //10
     'unit' => 'in',
-    'page_ranges'=> '1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59',
-    'test' => true
+    'page_ranges'=> '1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57',
+    'test' => false
 ];
 
 $ch = curl_init();
@@ -88,7 +88,7 @@ $outer_pdf_data = [
     'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
     'unit' => 'in', // in
-    'test' => true,
+    'test' => false,
 ];
 
 $ch = curl_init();
@@ -109,7 +109,7 @@ $img_data = [
     'width' => 9.09, // 10.5
     'landscape' =>  true,
     'unit' => 'in',
-    'test' => true,
+    'test' => false,
 ];
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_URL, 'https://docamatic.com/api/v1/image');
