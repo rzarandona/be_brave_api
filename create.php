@@ -107,7 +107,6 @@ $img_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'height' => 17.52, // 20
     'width' => 9.09, // 10.5
-    'landscape' =>  false,
     'unit' => 'in',
     'test' => false,
 ];
