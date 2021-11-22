@@ -105,8 +105,8 @@ $outer_pdf_converted_url = json_decode($response)->document;
 // START IMAGE CONVERSIONS
 $img_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
-    'height' => 17.52, // 20
-    'width' => 9.09, // 10.5
+    // 'height' => 17.52, // 20
+    // 'width' => 9.09, // 10.5
     'unit' => 'in',
     'test' => false,
 ];
