@@ -39,7 +39,13 @@ $contents = str_replace('“', '"', $contents);
 file_put_contents($html_file_path, $contents);
 
 // Parse Outer Book File
-$contents = file_get_contents ("./templates/" . $character . "-outer.html");
+// Decide which outer template to use
+$outer_file = "./templates/" . $character . "-outer.html";
+if($cover_type == "hardback"){
+    $outer_file = "./templates/" . $character . "-outer-hardback.html"; 
+}
+
+$contents = file_get_contents ($outer_file);
 $contents = str_replace('(nc)', $name, $contents);
 $contents = str_replace('(pp)', $p_pronoun, $contents);
 $contents = str_replace('(sp)', $s_pronoun, $contents);
@@ -75,17 +81,21 @@ curl_close($ch);
 $pdf_converted_url = json_decode($response)->document;
 
 $outer_page_ranges = "1, 3";
+$outer_page_height = 17.52;
+$outer_page_width = 9.09;
 if($cover_type == "hardback"){
     $outer_page_ranges = "1";
+    $outer_page_height = 19.52;
+    $outer_page_width = 10.66;
 }
 
 //START OUTER CONVERSIONS
 $outer_pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => 17.52, // 20
-    'width' => 9.09, // 10.5
-    'page_ranges' => $outer_page_ranges,
+    'height' => $outer_page_height, // 20
+    'width' => $outer_page_width, // 10.5
+    // 'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
     'unit' => 'in', // in
     'test' => false,
