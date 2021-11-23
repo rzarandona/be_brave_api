@@ -93,11 +93,11 @@ if($cover_type == "hardback"){
 $outer_pdf_data = [
     'source' => 'https://bebraveapi.hectorspost.com/html-outer-converted/' . $uuid_file_string . ".html",
     'media' => 'print',
-    'height' => $outer_page_height, // 20
-    'width' => $outer_page_width, // 10.5
-    // 'page_ranges' => $outer_page_ranges,
+    'height' => $outer_page_height,
+    'width' => $outer_page_width, 
+    'page_ranges' => $outer_page_ranges,
     'landscape' => true,  
-    'unit' => 'in', // in
+    'unit' => 'in',
     'test' => false,
 ];
 
